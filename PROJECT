@@ -1,0 +1,6 @@
+domain: a-ksy
+layout:
+- go.kubebuilder.io/v3
+projectName: math-operator
+repo: a-ksy/math-operator
+version: "3"
