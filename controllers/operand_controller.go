@@ -113,7 +113,12 @@ func (r *OperandReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 
 	// If Clear is true, set the result to operator.Value; otherwise calculate the new result with respect to the operator
 	if operand.Spec.Clear {
-		result.Status.Result = 0
+		if val, err := calculate(operator.Spec.Operation, operand.Spec.Value, 0); err != nil {
+			log.Error(err, "Unable to calculate the value of Result")
+			return ctrl.Result{}, err
+		} else {
+			result.Status.Result = val
+		}
 		result.Status.Calculation = fmt.Sprintf("%d", operand.Spec.Value)
 	} else {
 		if val, err := calculate(operator.Spec.Operation, operand.Spec.Value, result.Status.Result); err != nil {
