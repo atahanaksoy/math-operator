@@ -1,0 +1,6 @@
+apiVersion: math.a-ksy/v1
+kind: Operator
+metadata:
+  name: default
+spec:
+  operation: +

@@ -1,0 +1,7 @@
+apiVersion: math.a-ksy/v1
+kind: Operand
+metadata:
+  name: operand1
+spec:
+  value: 2
+  clear: false
