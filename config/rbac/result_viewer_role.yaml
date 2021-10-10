@@ -1,0 +1,20 @@
+# permissions for end users to view results.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: result-viewer-role
+rules:
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - results
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - results/status
+  verbs:
+  - get

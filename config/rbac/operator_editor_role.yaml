@@ -1,0 +1,24 @@
+# permissions for end users to edit operators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: operator-editor-role
+rules:
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operators/status
+  verbs:
+  - get

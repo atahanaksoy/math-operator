@@ -3,4 +3,30 @@ layout:
 - go.kubebuilder.io/v3
 projectName: math-operator
 repo: a-ksy/math-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: a-ksy
+  group: math
+  kind: Operand
+  path: a-ksy/math-operator/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: a-ksy
+  group: math
+  kind: Operator
+  path: a-ksy/math-operator/api/v1
+  version: v1
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: a-ksy
+  group: math
+  kind: Result
+  path: a-ksy/math-operator/api/v1
+  version: v1
 version: "3"

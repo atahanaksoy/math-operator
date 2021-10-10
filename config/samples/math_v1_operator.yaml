@@ -1,0 +1,7 @@
+apiVersion: math.a-ksy/v1
+kind: Operator
+metadata:
+  name: operator-sample
+spec:
+  # Add fields here
+  foo: bar

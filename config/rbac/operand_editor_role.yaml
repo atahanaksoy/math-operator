@@ -1,0 +1,24 @@
+# permissions for end users to edit operands.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: operand-editor-role
+rules:
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operands
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operands/status
+  verbs:
+  - get

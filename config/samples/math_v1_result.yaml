@@ -1,0 +1,7 @@
+apiVersion: math.a-ksy/v1
+kind: Result
+metadata:
+  name: result-sample
+spec:
+  # Add fields here
+  foo: bar

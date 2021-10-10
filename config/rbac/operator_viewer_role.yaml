@@ -1,0 +1,20 @@
+# permissions for end users to view operators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: operator-viewer-role
+rules:
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operators
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - math.a-ksy
+  resources:
+  - operators/status
+  verbs:
+  - get
